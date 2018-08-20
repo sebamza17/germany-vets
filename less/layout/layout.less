@@ -1,0 +1,33 @@
+/*
+    Layout base classes
+*/
+@import "sidebar-base";
+@import "navbar";
+@import "header";
+
+@sidebar-width: 60px;
+@sidebar-width--open: 260px;
+@sidebar-z-index: 10;
+
+.sidebar + .main-view {
+  width: ~"calc(100% - @{sidebar-width})";
+  margin-left: @sidebar-width;
+}
+
+// Body wrapper from Joomla
+#st-body-wrap {
+  min-height: 100vh;
+  @media (max-width: @breakpoint-s) {
+    padding: 0;
+  }
+}
+
+// Site wrapper from Joomla
+.st-site-wrap {
+  margin: 0 auto;
+  width: 1280px;
+  max-width: 94%;
+  @media (max-width: @breakpoint-s) {
+    max-width: 100%;
+  }
+}

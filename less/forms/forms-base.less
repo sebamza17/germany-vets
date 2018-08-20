@@ -1,0 +1,97 @@
+/*
+    Base classes for forms
+    Author: sebamza17
+*/
+
+.form {
+
+  // Base inputs
+  input[type="text"],
+  input[type="password"],
+  textarea,
+  select {
+    .padding-vertical-eighth;
+    .padding-horizontal-quarter;
+    .font-color-black-lighten-4;
+    .font-size-s--1;
+    transition: all 200ms ease;
+    width: 100%;
+    border: none;
+    outline: none !important;
+    display: block;
+    border: 2px solid transparent;
+
+    &:focus {
+      .z-depth-1;
+    }
+
+  }
+
+  // Textareas
+  textarea {
+    resize: vertical;
+  }
+
+  // Input wrapper
+  .form__input-wrapper {
+    .margin-bottom-quarter;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  // Labels
+  label {
+    display: flex;
+    width: 100%;
+    .padding-top-quarter;
+    .padding-bottom-quarter;
+    .font-weight-bold;
+    .font-color-white;
+    .font-size-s--2;
+
+    i {
+      opacity: 0.8;
+    }
+
+  }
+
+  // Variation => White inputs
+  &.form--gray {
+    input[type="text"],
+    input[type="password"],
+    textarea,
+    select {
+      .bg-color-white-darken-3;
+
+      &:focus {
+        .bg-color-white;
+      }
+
+    }
+  }
+
+  // Variation => White inputs
+  &.form--white {
+
+  }
+
+  // Variation => Inputs radius
+  &.form--border-radius {
+
+    @border-radius: 5px;
+
+    input[type="text"],
+    input[type="password"],
+    textarea,
+    select {
+      border-radius: @border-radius;
+    }
+
+    textarea {
+      border-radius: @border-radius;
+    }
+  }
+
+}

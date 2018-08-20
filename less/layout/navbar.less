@@ -1,0 +1,119 @@
+.navbar {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+
+  // Logo
+  .navbar__logo {
+    .padding-left-half;
+
+    img {
+      width: 200px;
+
+      @media (max-width: @breakpoint-l) and (min-width: @breakpoint-m) {
+        width: 150px;
+      }
+
+    }
+
+  }
+
+  // Responsive toggle
+  .navbar__toggle {
+    .padding-half;
+
+    #st-mobile-toggle {
+      padding: 0;
+
+      .icon-bar {
+        .bg-color-black-opacity-10;
+        width: 20px;
+        height: 2px;
+
+        & + .icon-bar {
+          margin-top: 2px;
+        }
+
+      }
+
+    }
+  }
+
+  // Navbar Main container
+  #st-menu {
+    position: static;
+    margin: 0 !important;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    height: auto;
+    transform: none;
+    background-color: initial;
+    font-family: inherit;
+
+    // Nav
+    ul.nav.menu {
+      display: flex;
+
+      // Each menu item
+      > li {
+        float: none;
+        font-size: inherit;
+        border: none;
+        margin: 0;
+        display: block;
+
+        &.active,
+        &.active.current,
+        &:hover,
+        &:focus {
+          > a {
+            .font-color-brand-sky;
+            background-color: transparent !important;
+          }
+        }
+
+        // Link inside menu item
+        > a {
+          .font-size-s;
+          .font-weight-bold;
+          color: inherit;
+          text-shadow: none;
+          box-shadow: none;
+          background-color: transparent;
+          text-transform: uppercase;
+          margin: 0;
+          height: auto !important;
+          line-height: 35px;
+          transition: all 200ms ease !important;
+
+          .padding-vertical-quarter;
+          .padding-horizontal-half;
+
+          &.active,
+          &:hover {
+            .font-color-brand-sky;
+            background-color: transparent !important;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+// Responsive buttons
+#st-mobile-wrap {
+  display: none;
+  @media (max-width: @breakpoint-m) {
+    display: block;
+  }
+}

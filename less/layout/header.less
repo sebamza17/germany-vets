@@ -1,0 +1,143 @@
+// Wrapper for hero and navbar
+.header-wrapper {
+
+}
+
+// Hero
+.header-hero {
+
+  position: relative;
+
+  // Image
+  .header-hero__image {
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-image: url('../images/hero-3.jpg');
+  }
+
+  // Bottom search bar
+  .header-hero__search-container {
+    .bg-color-brand-sky-opacity-4;
+    .padding-half;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+
+    // Wrapper
+    .rf-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @media (max-width: @breakpoint-s) {
+        display: block;
+      }
+    }
+
+    // Features
+    .header-hero__features {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @media (max-width: @breakpoint-s) {
+        .padding-bottom-half;
+        width: 40%;
+        margin: 0 auto;
+      }
+
+      @media (max-width: @breakpoint-xs--1) {
+        width: 50%;
+      }
+
+      @media (max-width: @breakpoint-xs) {
+        width: 100%;
+      }
+
+      // Instance
+      .header-hero__feature {
+        .margin-right-full;
+        text-align: center;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+
+        // Image
+        .header-hero__feature-image {
+
+          .padding-quarter;
+          display: inline-block;
+          border: 2px solid white;
+          border-radius: 50%;
+
+          img {
+            display: block;
+            width: 20px;
+            height: 20px;
+            @media (max-width: @breakpoint-s) {
+              width: 20px;
+              height: 20px;
+            }
+          }
+
+        }
+
+        // Text
+        .header-hero__feature-text {
+          .font-color-white;
+          .font-weight-bold;
+          text-align: center;
+        }
+
+      }
+
+    }
+
+    // Search form
+    .header-hero__form {
+
+      // Text
+      .rf-text {
+        .font-color-white;
+        .font-size-n;
+
+        @media (max-width: @breakpoint-s) {
+          justify-content: center;
+        }
+
+        i {
+          .font-size-xl;
+        }
+      }
+
+      // Input with button
+      .rf-input-container {
+        .margin-top-quarter;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        input {
+          display: block;
+          width: 100%;
+          height: 100%;
+          margin-bottom: 0;
+        }
+
+        .btn {
+          .font-size-s--2;
+          text-transform: none;
+          height: 34px;
+          padding: 4px 15px;
+        }
+
+      }
+
+    }
+
+  }
+
+}

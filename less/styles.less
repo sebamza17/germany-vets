@@ -1,0 +1,103 @@
+/*
+    Base file for all styles - Contains variables, mixins and base css
+    Author: sebamza17
+*/
+
+/*--- Global Vars ---*/
+
+// [Screen] - Breakpoints
+@breakpoint-xxs: 320px;
+@breakpoint-xxs--1: 360px;
+@breakpoint-xxs--2: 420px;
+@breakpoint-xs: 480px;
+@breakpoint-xs--1: 600px;
+@breakpoint-xs--2: 700px;
+@breakpoint-s: 768px;
+@breakpoint-s--1: 850px;
+@breakpoint-m: 993px;
+@breakpoint-m--1: 1024px;
+@breakpoint-m--2: 1200px;
+@breakpoint-l: 1200px;
+@breakpoint-l--1: 1280px;
+@breakpoint-l--2: 1370px;
+@breakpoint-l--3: 1440px;
+@breakpoint-xl: 1600px;
+@breakpoint-xl--1: 1800px;
+
+// [Structure] - Margin and padding sizes
+@margin-width: 30px;
+@padding-width: 30px;
+
+// [Fonts] - Families
+@font-family-base: 'Lato', sans-serif;
+@font-weight-base: 300;
+@font-color-base: #444;
+@font-size-base: 62.5%;
+@font-placeholder-color: #808080;
+
+// [Colors] - Brand
+@color-brand-blue: #58A3FF;
+@color-brand-orange: #E86548;
+@color-brand-blue-electric: #015581;
+@color-brand-sky: #68EB91;
+@color-brand-yellow: #FFD14F;
+@color-input: #F2F4F8;
+@color-brand-green: #77C380;
+@color-brand-red: #D65F5F;
+
+// [Colors] - Generics
+@color-generic-blue: #3AA1FF;
+@color-generic-orange: #E86548;
+@color-generic-green: #78FF53;
+@color-generic-red: #C32026;
+
+// [Colors] - Generic
+@color-social-facebook: #235999;
+@color-social-twitter: #1DA1F2;
+@color-social-instagram: #262626;
+@color-social-youtube: #E62117;
+@color-social-vimeo: #00ADEF;
+
+// [Colors] - Backgrounds
+@color-main-background: white;
+
+// [Transitions]
+@transition-base-rule: all 400ms ease;
+
+/*--- end Global Vars ---*/
+
+/*--- Inits ---*/
+@import "inits";
+
+/*--- Base (Global helpers) ---*/
+@import "base/backgrounds";
+@import "base/flex";
+@import "base/fonts";
+@import "base/guards";
+@import "base/helpers";
+
+/*--- Bootstrap ---*/
+@import "bootstrap-helpers/bootstrap-index";
+
+/*--- Common helpers ---*/
+@import "common/borders";
+
+/*--- Layout ---*/
+@import "layout/layout";
+
+/*--- Forms ---*/
+@import "forms/forms-base";
+@import "base/forms";
+
+/*--- Bricks ---*/
+
+/*--- Components ---*/
+@import "components/horizontal-separator";
+@import "components/link-icon";
+@import "components/buttons";
+@import "components/tables";
+@import "components/tabs";
+@import "components/filters/filters-base";
+
+/*--- ShameCSS - Credits to CSSwizardry ---*/
+@import "shame";

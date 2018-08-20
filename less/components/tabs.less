@@ -1,0 +1,100 @@
+/*
+Tabs for cards*/
+.nav-tabs > li {
+  margin-bottom: 0;
+}
+
+.nav-tabs > li > a,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+  border: none;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  .bg-color-white-darken-12;
+  color: white;
+  border: none;
+}
+
+.card-tab__wrapper {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  display: flex;
+  border-bottom: none;
+  .width-full;
+  overflow: auto;
+  white-space: nowrap;
+
+  &.card-tab--relative {
+    position: relative;
+  }
+
+  &.nav-tabs {
+
+    /* > li {
+       &.active > a.card-tab.card-tab--green:hover,
+       &.active > a.card-tab.card-tab--green:focus,
+       &.active > a.card-tab.card-tab--green {
+         .bg-color-brand-green;
+         color: white;
+       }
+
+       &.active > a.card-tab:hover,
+       &.active > a.card-tab:focus,
+       &.active > a.card-tab {
+         .bg-color-white-darken-12;
+         color: white;
+       }
+     }*/
+  }
+  .card-tab {
+    .padding-horizontal-full;
+    .padding-vertical-quarter;
+    .bg-color-white-darken-10;
+    .font-color-white;
+    .margin-right-quarter;
+    border-radius: 10px 10px 0 0 !important;
+    .clickable !important;
+
+    &:hover, &:focus {
+      .bg-color-white-darken-12;
+      color: white;
+    }
+
+    &.card-tab--disabled {
+      .bg-color-white-darken-3;
+      .font-color-white-darken-10;
+    }
+
+    &.card-tab--blue {
+      .bg-color-brand-blue;
+      .font-color-white;
+      &:hover, &:focus {
+        .bg-color-brand-blue;
+        color: white;
+      }
+    }
+
+    &.card-tab--grey {
+      .bg-color-white-darken-6;
+      .font-color-white;
+      &:hover, &:focus {
+        .bg-color-white-darken-6;
+        color: white;
+      }
+
+    }
+    &.card-tab--grey-dark {
+      .bg-color-white-darken-14;
+      .font-color-white;
+      &:hover, &:focus {
+        .bg-color-white-darken-14;
+        color: white;
+      }
+    }
+
+  }
+}

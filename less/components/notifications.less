@@ -1,0 +1,178 @@
+/*Local vars*/
+@box-size: 60px;
+
+.notifications__number {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  flex-shrink: 0;
+  .margin-right-half;
+  .flex-wrapper ;
+  .flex-wrapper--justify-center ;
+  .flex-wrapper--align-center ;
+  .bg-color-brand-red;
+  .font-color-white;
+
+}
+
+.notifications {
+  position: fixed;
+  top: @navbar-height;
+  right: 0;
+  z-index: @navbar-z-index - 1;
+  transform: translateY(-100%);
+  width: ~"calc(100% - @{main-sidebar-width})";
+  opacity: 0;
+
+  transition: all 400ms ease;
+
+  @media (max-width: @breakpoint-s){
+    width: 100%;
+  }
+
+  &.notifications--active{
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .notifications-header__wrapper {
+    &.notifications-header--critical {
+      .bg-color-brand-red;
+    }
+  }
+
+  .notifications-header {
+    .flex-wrapper;
+    .flex-wrapper--justify-space-between;
+    .flex-wrapper--align-center;
+    .padding-vertical-quarter;
+    color: white;
+    font-weight: bold;
+    i {
+      color: white;
+    }
+  }
+
+  .notifications-body__wrapper {
+    .bg-color-white;
+    .z-depth-1;
+
+    .notifications-body {
+      .flex-wrapper;
+      .flex-wrapper--align-center;
+      .flex-wrapper--justify-space-between;
+      .padding-vertical-full;
+      .font-color-white-darken-10;
+
+
+      @media (min-width: @breakpoint-m) and (max-width: @breakpoint-m--2){
+        flex-direction: column;
+        align-items: center;
+      }
+
+      @media (max-width: @breakpoint-s--1){
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /*Full notifications*/
+      .notifications-summary__wrapper {
+        .flex-wrapper;
+        .flex-wrapper--align-center;
+
+        @media (max-width: @breakpoint-s){
+          .margin-bottom-full;
+        }
+
+        @media (max-width: @breakpoint-s--1){
+          .margin-bottom-quarter;
+        }
+
+        .notifications-summary {
+          .flex-wrapper;
+          .flex-wrapper--align-center;
+          border-right: 1px solid grey;
+          cursor: pointer;
+          .padding-right-full;
+          .margin-right-full;
+
+          &:last-of-type{
+            border-right: none;
+            margin-right: 0;
+            padding-right: 0;
+          }
+
+          .notifications-box {
+            width: @box-size;
+            height: @box-size;
+            border: 1px solid grey;
+            .padding-half;
+            .flex-wrapper;
+            .flex-wrapper--align-center;
+            .flex-wrapper--justify-center;
+            .margin-right-half;
+            position: relative;
+
+            &:after {
+              content: attr(data-count);
+              position: absolute;
+              right: 0;
+              top: 0;
+              transform: translateX(30%) translateY(-30%);
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              .bg-color-brand-red;
+              color: white;
+              font-weight: bold;
+              .flex-wrapper;
+              .flex-wrapper--align-center;
+              .flex-wrapper--justify-center;
+              .font-size-s;
+            }
+
+            i {
+              .font-size-xxl;
+            }
+          }
+
+          .notifications-summary__title {
+            .font-color-white-darken-12;
+            .padding-bottom-quarter;
+            font-weight: bold;
+          }
+
+          .notifications-summary__content {
+            .font-color-white-darken-8;
+            .font-size-s--1;
+            max-width: 150px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          /*Status*/
+
+          &.notifications-summary--yellow {
+            .notifications-box {
+              &:after {
+                background-color: @color-brand-yellow;
+              }
+            }
+          }
+
+          &.notifications-summary--green {
+            .notifications-box {
+              &:after {
+                background-color: @color-brand-green;
+              }
+            }
+
+          }
+
+        }
+      }
+    }
+  }
+}
+

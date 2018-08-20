@@ -1,0 +1,173 @@
+/*
+    Top filters
+*/
+@import "filter-select-input";
+
+.filter-container {
+  .bg-color-brand-blue;
+  .font-color-white;
+  .padding-vertical-half;
+
+  // Variation => Inner option with lighter bg
+  &.filter-container--inner {
+    .padding-vertical-half;
+    .padding-bottom-none;
+    .bg-color-white-darken-1;
+  }
+
+  // Variation => Smaller paddings
+  &.filter-container--title {
+    .padding-vertical-quarter;
+  }
+
+}
+
+/*--- Wrapper ---*/
+.filter-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+}
+
+/*--- Instance ---*/
+.filter {
+  .margin-bottom-quarter;
+  transition: all 200ms ease;
+  width: 100% / 4;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  @media (max-width: @breakpoint-l) {
+    width: 100% / 4;
+  }
+
+  @media (max-width: @breakpoint-m) {
+    width: 100% / 3;
+  }
+
+  @media (max-width: @breakpoint-s) {
+    width: 100% / 2;
+  }
+
+  @media (max-width: @breakpoint-xs) {
+    width: 100%;
+  }
+
+  // Variation => Gray font
+  &.filter--font-color-gray {
+    .filter__name {
+      .font-color-white-darken-14;
+    }
+  }
+
+  // Variation => Bigger font
+  &.filter--font-size-s-2 {
+    .filter__name {
+      .font-size-s--2;
+    }
+  }
+
+  // Variation => Inline
+  &.filter--inline {
+    display: inline-flex;
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    .filter__wrapper {
+      .bg-color-white-opacity-6;
+      .filter__value {
+        //color: transparent;
+      }
+    }
+  }
+
+  input:checked + .filter__wrapper {
+
+    .bg-color-white;
+
+    //&:hover {
+    //  .filter__value {
+    //    .font-color-brand-blue-darken-4;
+    //  }
+    //}
+
+    .filter__value {
+      .font-color-black-lighten-4;
+    }
+
+    &:before {
+      opacity: 1;
+    }
+
+  }
+
+  // Filter radio input
+  input {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    .margin-right-eighth;
+    .margin-left-quarter;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+  }
+
+  .filter__wrapper {
+    .padding-vertical-eighth;
+    .padding-horizontal-quarter;
+    .margin-right-half;
+    position: relative;
+    transition: all 200ms ease;
+    /*border-radius: 40px;*/
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    &:before {
+      .bg-color-white;
+      transition: all 200ms ease;
+      content: '';
+      position: absolute;
+      right: 100%;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+    }
+
+  }
+
+  // Filter name
+  .filter__name {
+    .font-color-brand-blue-darken-4;
+    .font-size-s--1;
+    .font-weight-normal;
+    vertical-align: middle;
+    display: inline-block;
+    float: left;
+    min-width: 20%;
+    flex-shrink: 0;
+    width: 30%;
+  }
+
+  // Filter value
+  .filter__value {
+    .font-weight-bold;
+    .font-size-s--1;
+    .font-color-black-lighten-10;
+    text-align: right;
+    width: 70%;
+    display: block;
+    float: left;
+    transition: all 200ms ease;
+  }
+
+}
+
+/*--- Select as a filter ---*/

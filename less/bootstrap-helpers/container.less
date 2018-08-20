@@ -1,0 +1,25 @@
+/*--- Container ---*/
+.container {
+  .padding-horizontal-half;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+
+  @media (max-width: @breakpoint-xl) {
+    max-width: 1410px;
+  }
+
+  @media (max-width: @breakpoint-l--2) {
+    max-width: 1300px;
+  }
+
+  @media (max-width: @breakpoint-l) {
+    max-width: 1170px;
+  }
+
+}
+
+.container-negative-margin {
+  margin-left: @margin-width * -0.5;
+  margin-right: @margin-width * -0.5;
+}
